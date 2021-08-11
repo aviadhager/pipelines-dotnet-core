@@ -15,6 +15,7 @@ pipeline {
     stage('Build') {
       steps {
         sh 'dotnet build'
+        cleanWs(cleanWhenSuccess: true, cleanWhenFailure: true)
       }
     }
 
